@@ -1,0 +1,908 @@
+/*
+
+Xilinx Vivado v2022.1 (64-bit) [Major: 2022, Minor: 1]
+SW Build: 3526262 on Mon Apr 18 15:47:01 MDT 2022
+IP Build: 3524634 on Mon Apr 18 20:55:01 MDT 2022
+
+Process ID (PID): 61923
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Aug 30 14:00:57 EDT 2023
+Time zone: 	Eastern Standard Time (America/New_York)
+
+OS: Red Hat Enterprise Linux Server release 7.9 (Maipo)
+OS Version: 3.10.0-1160.49.1.el7.x86_64
+OS Architecture: amd64
+Available processors (cores): 12
+
+Display: 13
+Screen size: 1706x914
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+Scale size: 12
+
+Java version: 	11.0.11 64-bit
+Java home: 	/storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/tps/lnx64/jre11.0.11_9
+Java executable: 	/storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/tps/lnx64/jre11.0.11_9/bin/java
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Djdk.gtk.version=2, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, --add-opens=java.desktop/sun.awt.X11=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m, -Xrs]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	slee802
+User home directory: /home/hice1/slee802
+User working directory: /home/hice1/slee802/lab1/cs3220-labs/lab1/part0
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado
+HDI_APPROOT: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1
+RDI_DATADIR: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/data
+RDI_BINDIR: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/bin
+
+Vivado preferences file: /home/hice1/slee802/.Xilinx/Vivado/2022.1/vivado.xml
+Vivado preferences directory: /home/hice1/slee802/.Xilinx/Vivado/2022.1/
+Vivado layouts directory: /home/hice1/slee802/.Xilinx/Vivado/2022.1/data/layouts
+PlanAhead jar file: 	/storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/lib/classes/planAhead.jar
+Vivado log file: 	/home/hice1/slee802/lab1/cs3220-labs/lab1/part0/vivado.log
+Vivado journal file: 	/home/hice1/slee802/lab1/cs3220-labs/lab1/part0/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-61923-atl1-1-01-005-4-2.pace.gatech.edu
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/ids_lite/ISE
+XILINX_DSP: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/ids_lite/ISE
+XILINX_HLS: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vitis_HLS/2022.1
+XILINX_PLANAHEAD: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1
+XILINX_SDK: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vitis/2022.1
+XILINX_VITIS: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vitis/2022.1
+XILINX_VIVADO: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1
+XILINX_VIVADO_HLS: /storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1
+
+
+GUI allocated memory:	346 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 5,876 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// HMemoryUtils.trashcanNow. Engine heap size: 5,876 MB. GUI used memory: 54 MB. Current time: 8/30/23, 2:00:58 PM EDT
+selectButton(PAResourceEtoH.GettingStartedView_OPEN_PROJECT, "Open Project"); // y
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+dismissFileChooser();
+selectButton(PAResourceEtoH.GettingStartedView_CREATE_NEW_PROJECT, "Create Project"); // y
+// Run Command: PAResourceCommand.PACommandNames_NEW_PROJECT
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceOtoP.ProjectNameChooser_CHOOSE_PROJECT_LOCATION, (String) null); // s
+// Elapsed time: 17 seconds
+setFolderChooser("/home/hice1/slee802/lab1/cs3220-labs/lab1_vivado");
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_DIRECTORIES, "Add Directories"); // a
+setFolderChooser("/home/hice1/slee802/lab1/cs3220-labs/lab1");
+selectButton("NEXT", "Next >"); // JButton
+// [GUI Memory]: 82 MB (+83396kb) [00:01:23]
+// [Engine Memory]: 5,882 MB (+6015867kb) [00:01:23]
+// [GUI Memory]: 88 MB (+2493kb) [00:01:23]
+// [GUI Memory]: 117 MB (+25748kb) [00:01:23]
+selectButton("NEXT", "Next >"); // JButton
+selectButton("NEXT", "Next >"); // JButton
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: create_project project_1 /home/hice1/slee802/lab1/cs3220-labs/lab1_vivado/project_1 -part xc7vx485tffg1157-1 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  1199 ms.
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/storage/ice-shared/cs3220/design_tool_chain/xilinx_2022_1/Vivado/2022.1/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+selectButton("FINISH", "Finish"); // JButton
+// 'g' command handler elapsed time: 47 seconds
+dismissDialog("Create Project"); // bA
+dismissDialog("New Project"); // f
+// HMemoryUtils.trashcanNow. Engine heap size: 5,960 MB. GUI used memory: 65 MB. Current time: 8/30/23, 2:02:13 PM EDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 158 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 2); // D
+// [GUI Memory]: 127 MB (+4140kb) [00:04:09]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, agex_stage.v]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, agex_stage.v]", 3, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1152 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 6,024 MB. GUI used memory: 73 MB. Current time: 8/30/23, 2:04:54 PM EDT
+dismissDialog("Opening Editor"); // bA
+// Elapsed time: 82 seconds
+selectCodeEditor("agex_stage.v", 487, 322); // be
+selectCodeEditor("agex_stage.v", 520, 307); // be
+// Elapsed time: 69 seconds
+selectCodeEditor("agex_stage.v", 364, 387); // be
+// Elapsed time: 33 seconds
+selectCodeEditor("agex_stage.v", 242, 543); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "br_cond", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "br_cond"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "br_cond"); // k
+selectCodeEditor("agex_stage.v", 219, 564); // be
+selectCodeEditor("agex_stage.v", 70, 572); // be
+selectCodeEditor("agex_stage.v", 82, 674); // be
+selectCodeEditor("agex_stage.v", 65, 572); // be
+selectCodeEditor("agex_stage.v", 107, 562); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 108, 580); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 111, 590); // be
+selectCodeEditor("agex_stage.v", 125, 592); // be
+selectCodeEditor("agex_stage.v", 125, 592, false, false, false, false, true); // be - Double Click
+selectCodeEditor("agex_stage.v", 117, 592); // be
+selectCodeEditor("agex_stage.v", 110, 592); // be
+selectCodeEditor("agex_stage.v", 135, 590); // be
+selectCodeEditor("agex_stage.v", 130, 592); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 128, 610); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 128, 619); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 138, 633); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,043 MB. GUI used memory: 81 MB. Current time: 8/30/23, 2:08:43 PM EDT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 139 MB (+5902kb) [00:08:02]
+selectCodeEditor("agex_stage.v", 203, 650); // be
+// Elapsed time: 21 seconds
+selectCodeEditor("agex_stage.v", 212, 405); // be
+// Elapsed time: 32 seconds
+selectCodeEditor("agex_stage.v", 150, 581); // be
+// Elapsed time: 168 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, de_stage.v]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, de_stage.v]", 4, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1104 ms.
+dismissDialog("Opening Editor"); // bA
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D
+// Elapsed time: 56 seconds
+selectCodeEditor("agex_stage.v", 343, 391); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,043 MB. GUI used memory: 82 MB. Current time: 8/30/23, 2:38:43 PM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,043 MB. GUI used memory: 65 MB. Current time: 8/30/23, 3:08:43 PM EDT
+// Elapsed time: 3995 seconds
+selectCodeEditor("agex_stage.v", 275, 284); // be
+// Elapsed time: 543 seconds
+selectCodeEditor("agex_stage.v", 334, 303); // be
+selectCodeEditor("agex_stage.v", 427, 317); // be
+// Elapsed time: 44 seconds
+selectCodeEditor("agex_stage.v", 399, 318); // be
+// Elapsed time: 45 seconds
+selectCodeEditor("agex_stage.v", 116, 295); // be
+selectCodeEditor("agex_stage.v", 139, 277); // be
+// Elapsed time: 11 seconds
+selectCodeEditor("agex_stage.v", 162, 271); // be
+// Elapsed time: 397 seconds
+selectCodeEditor("agex_stage.v", 82, 277); // be
+selectCodeEditor("agex_stage.v", 79, 277); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "op_I_AGEX", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "op_I_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "op_I_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "op_I_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "op_I_AGEX"); // k
+// HMemoryUtils.trashcanNow. Engine heap size: 6,043 MB. GUI used memory: 65 MB. Current time: 8/30/23, 3:38:43 PM EDT
+// Elapsed time: 499 seconds
+selectCodeEditor("agex_stage.v", 211, 286); // be
+// Elapsed time: 464 seconds
+selectCodeEditor("agex_stage.v", 44, 341); // be
+// Elapsed time: 11 seconds
+selectCodeEditor("agex_stage.v", 147, 259); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 383 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout"); // k
+// Elapsed time: 39 seconds
+selectCodeEditor("agex_stage.v", 40, 248); // be
+selectCodeEditor("agex_stage.v", 154, 209); // be
+// Elapsed time: 23 seconds
+selectCodeEditor("agex_stage.v", 249, 234); // be
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, agex_stage.v]", 3, false); // D
+selectCodeEditor("agex_stage.v", 171, 163); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 124 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, de_stage.v]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, de_stage.v]", 4, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1075 ms.
+dismissDialog("Opening Editor"); // bA
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, fe_stage.v]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, fe_stage.v]", 5, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1078 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 6,072 MB. GUI used memory: 66 MB. Current time: 8/30/23, 4:04:13 PM EDT
+dismissDialog("Opening Editor"); // bA
+// Elapsed time: 32 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, mem_stage.v]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, mem_stage.v]", 6, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1080 ms.
+dismissDialog("Opening Editor"); // bA
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, wb_stage.v]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, wb_stage.v]", 7, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1072 ms.
+dismissDialog("Opening Editor"); // bA
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 1); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 6,094 MB. GUI used memory: 67 MB. Current time: 8/30/23, 4:04:53 PM EDT
+// Elapsed time: 22 seconds
+selectCodeEditor("agex_stage.v", 315, 125); // be
+selectCodeEditor("agex_stage.v", 338, 141); // be
+selectCodeEditor("agex_stage.v", 338, 166); // be
+selectCodeEditor("agex_stage.v", 355, 159); // be
+// Elapsed time: 47 seconds
+selectCodeEditor("agex_stage.v", 98, 9); // be
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, define.vh]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog Header, define.vh]", 2, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1079 ms.
+dismissDialog("Opening Editor"); // bA
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 6); // m
+// Elapsed time: 151 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 59, 338); // be
+selectCodeEditor("agex_stage.v", 168, 267); // be
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 13, 110); // be
+typeControlKey(null, null, 'z');
+selectCodeEditor("define.vh", 109, 114); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 103, 281); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,114 MB. GUI used memory: 68 MB. Current time: 8/30/23, 4:09:23 PM EDT
+selectCodeEditor("agex_stage.v", 105, 277); // be
+// Elapsed time: 16 seconds
+selectCodeEditor("agex_stage.v", 142, 311); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+// Elapsed time: 189 seconds
+selectCodeEditor("agex_stage.v", 521, 293); // be
+// Elapsed time: 98 seconds
+selectCodeEditor("agex_stage.v", 61, 310); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+// Elapsed time: 62 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 149 seconds
+selectCodeEditor("agex_stage.v", 211, 225); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,119 MB. GUI used memory: 67 MB. Current time: 8/30/23, 4:39:23 PM EDT
+// Elapsed time: 1913 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 52 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fe_stage.v", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+// Elapsed time: 13 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "fe_stage.v", 4); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+// Elapsed time: 153 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "mem_stage.v", 5); // m
+selectCodeEditor("mem_stage.v", 302, 70); // be
+typeControlKey((HResource) null, "mem_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "from_MEM_to_AGEX", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "from_MEM_to_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "from_MEM_to_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "from_MEM_to_AGEX"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "from_MEM_to_AGEX"); // k
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 718 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 6,119 MB. GUI used memory: 67 MB. Current time: 8/30/23, 5:09:23 PM EDT
+// Elapsed time: 173 seconds
+selectCodeEditor("de_stage.v", 337, 212); // be
+selectCodeEditor("de_stage.v", 345, 282); // be
+// Elapsed time: 47 seconds
+selectCodeEditor("de_stage.v", 255, 174); // be
+typeControlKey((HResource) null, "de_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DE_latch_out", true); // k
+// Elapsed time: 50 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "DE_latch_out"); // k
+selectCodeEditor("de_stage.v", 283, 169); // be
+selectCodeEditor("de_stage.v", 269, 249); // be
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 109, 187); // be
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rs1", true); // k
+// Elapsed time: 51 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // k
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 91 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 26 seconds
+selectCodeEditor("define.vh", 117, 115); // be
+selectCodeEditor("define.vh", 115, 89); // be
+selectCodeEditor("define.vh", 123, 102); // be
+// Elapsed time: 31 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 14 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regval", true); // k
+// Elapsed time: 83 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 27 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 275, 168); // be
+selectCodeEditor("de_stage.v", 263, 177); // be
+// Elapsed time: 168 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 363, 87); // be
+selectCodeEditor("de_stage.v", 343, 101); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 343, 112); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 37 seconds
+selectCodeEditor("define.vh", 292, 144); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 350, 97); // be
+selectCodeEditor("de_stage.v", 371, 114); // be
+selectCodeEditor("de_stage.v", 383, 133); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,139 MB. GUI used memory: 68 MB. Current time: 8/30/23, 5:22:48 PM EDT
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 384, 129); // be
+selectCodeEditor("de_stage.v", 407, 146); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 410, 142); // be
+selectCodeEditor("de_stage.v", 414, 151); // be
+selectCodeEditor("de_stage.v", 408, 140); // be
+selectCodeEditor("de_stage.v", 389, 160); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 422, 159); // be
+selectCodeEditor("de_stage.v", 337, 191); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,149 MB. GUI used memory: 68 MB. Current time: 8/30/23, 5:23:13 PM EDT
+selectCodeEditor("de_stage.v", 409, 189); // be
+selectCodeEditor("de_stage.v", 341, 204); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 409, 209); // be
+selectCodeEditor("de_stage.v", 343, 223); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 401, 221); // be
+// Elapsed time: 33 seconds
+selectCodeEditor("de_stage.v", 425, 223); // be
+selectCodeEditor("de_stage.v", 399, 223); // be
+selectCodeEditor("de_stage.v", 390, 235); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 374, 237); // be
+selectCodeEditor("de_stage.v", 375, 252); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 373, 251); // be
+selectCodeEditor("de_stage.v", 382, 270); // be
+selectCodeEditor("de_stage.v", 358, 265); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 355, 268); // be
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 143, 69); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 413, 103); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+// Elapsed time: 153 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 171, 89); // be
+selectCodeEditor("define.vh", 165, 59); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 409, 157); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectCodeEditor("de_stage.v", 395, 169); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 193, 105); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "IOP"); // k
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 443, 191); // be
+selectCodeEditor("de_stage.v", 435, 202); // be
+selectCodeEditor("de_stage.v", 425, 232); // be
+selectCodeEditor("de_stage.v", 421, 246); // be
+selectCodeEditor("de_stage.v", 420, 256); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 237, 172); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regnobits", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regnobits"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "regnobits"); // k
+selectCodeEditor("define.vh", 161, 112); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectCodeEditor("de_stage.v", 429, 313); // be
+typeControlKey((HResource) null, "de_stage.v", 'v'); // be
+// Elapsed time: 38 seconds
+selectCodeEditor("de_stage.v", 345, 123); // be
+selectCodeEditor("de_stage.v", 463, 139); // be
+// Elapsed time: 31 seconds
+selectCodeEditor("de_stage.v", 491, 147); // be
+// Elapsed time: 24 seconds
+selectCodeEditor("de_stage.v", 469, 173); // be
+// Elapsed time: 73 seconds
+selectCodeEditor("de_stage.v", 476, 136); // be
+selectCodeEditor("de_stage.v", 461, 128); // be
+selectCodeEditor("de_stage.v", 482, 270); // be
+selectCodeEditor("de_stage.v", 487, 260); // be
+selectCodeEditor("de_stage.v", 503, 277); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 50 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 13 seconds
+selectCodeEditor("agex_stage.v", 172, 203); // be
+selectCodeEditor("agex_stage.v", 117, 237); // be
+// Elapsed time: 50 seconds
+selectCodeEditor("agex_stage.v", 142, 234); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 212, 327); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 12 seconds
+selectCodeEditor("agex_stage.v", 446, 241); // be
+selectCodeEditor("agex_stage.v", 436, 233); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 141, 265); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 187, 162); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 247, 162); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 60 seconds
+selectCodeEditor("agex_stage.v", 115, 327); // be
+// Elapsed time: 12 seconds
+selectCodeEditor("agex_stage.v", 435, 232); // be
+selectCodeEditor("agex_stage.v", 451, 232); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 16 seconds
+selectCodeEditor("agex_stage.v", 160, 87); // be
+selectCodeEditor("agex_stage.v", 54, 112); // be
+selectCodeEditor("agex_stage.v", 95, 113); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 79, 97); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// Elapsed time: 15 seconds
+selectCodeEditor("agex_stage.v", 113, 145); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 172, 95); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// Elapsed time: 36 seconds
+selectCodeEditor("agex_stage.v", 51, 98); // be
+selectCodeEditor("agex_stage.v", 441, 141); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 167, 71); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 126, 84); // be
+selectCodeEditor("agex_stage.v", 113, 99); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 357, 85); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 371, 79); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 133, 94); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("agex_stage.v", 138, 171); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,172 MB. GUI used memory: 68 MB. Current time: 8/30/23, 5:38:59 PM EDT
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 313, 61); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch"); // k
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "AGEX_latch_contents", true); // k
+// Elapsed time: 51 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 335, 127); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 391, 127); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 466, 128); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 531, 129); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 569, 123); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rd_DE", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rd_DE"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rd_DE"); // k
+selectCodeEditor("de_stage.v", 139, 171); // be
+selectCodeEditor("de_stage.v", 67, 172); // be
+selectCodeEditor("de_stage.v", 63, 172); // be
+typeControlKey((HResource) null, "de_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rs1_val_DE", true); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rs1_val_DE"); // k
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "rs1_val_DE"); // k
+// Elapsed time: 72 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 54 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 266, 284); // be
+selectCodeEditor("agex_stage.v", 259, 298); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 284, 307); // be
+selectCodeEditor("agex_stage.v", 277, 324); // be
+// Elapsed time: 59 seconds
+selectCodeEditor("agex_stage.v", 253, 187); // be
+selectCodeEditor("agex_stage.v", 247, 167); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 57, 204); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 64, 51); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+// Elapsed time: 18 seconds
+selectCodeEditor("agex_stage.v", 144, 251); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 511, 127); // be
+selectCodeEditor("define.vh", 520, 129); // be
+selectCodeEditor("define.vh", 508, 126); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectCodeEditor("define.vh", 478, 113); // be
+selectCodeEditor("define.vh", 685, 125); // be
+selectCodeEditor("define.vh", 725, 132); // be
+selectCodeEditor("define.vh", 508, 127); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectCodeEditor("define.vh", 569, 130); // be
+typeControlKey((HResource) null, "define.vh", 'v'); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 31 seconds
+selectCodeEditor("define.vh", 571, 125); // be
+selectCodeEditor("define.vh", 598, 171); // be
+selectCodeEditor("define.vh", 513, 126); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectCodeEditor("define.vh", 579, 127); // be
+typeControlKey((HResource) null, "define.vh", 'v'); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 262, 247); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [Engine Memory]: 6,184 MB (+8669kb) [03:47:26]
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 6,193 MB. GUI used memory: 68 MB. Current time: 8/30/23, 5:48:24 PM EDT
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 253, 203); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 262, 217); // be
+selectCodeEditor("agex_stage.v", 262, 237); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 353, 238); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 14 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 10 seconds
+selectCodeEditor("agex_stage.v", 144, 322); // be
+selectCodeEditor("agex_stage.v", 192, 319); // be
+selectCodeEditor("agex_stage.v", 141, 325); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX", true); // k
+// Elapsed time: 10 seconds
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "aluout_AGEX"); // k
+selectCodeEditor("agex_stage.v", 320, 256); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 619, 127); // be
+selectCodeEditor("define.vh", 786, 131); // be
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 164 seconds
+selectCodeEditor("agex_stage.v", 149, 303); // be
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("define.vh", 513, 124); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectCodeEditor("define.vh", 573, 129); // be
+typeControlKey((HResource) null, "define.vh", 'v'); // be
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// HMemoryUtils.trashcanNow. Engine heap size: 6,223 MB. GUI used memory: 77 MB. Current time: 8/30/23, 5:53:14 PM EDT
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 61 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "de_stage.v", 3); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+// Elapsed time: 14 seconds
+selectCodeEditor("agex_stage.v", 137, 246); // be
+selectCodeEditor("agex_stage.v", 64, 293); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 133, 246); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 216ms to process. Increasing delay to 2000 ms.
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 23 seconds
+selectCodeEditor("agex_stage.v", 464, 250); // be
+selectCodeEditor("agex_stage.v", 271, 260); // be
+selectCodeEditor("agex_stage.v", 105, 269); // be
+selectCodeEditor("agex_stage.v", 135, 234); // be
+selectCodeEditor("agex_stage.v", 115, 238); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("agex_stage.v", 480, 221); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 73, 191); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 53, 217); // be
+selectCodeEditor("agex_stage.v", 51, 218); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 468, 215); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 89, 245); // be
+selectCodeEditor("agex_stage.v", 78, 234); // be
+selectCodeEditor("agex_stage.v", 358, 233); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 465, 239); // be
+// HMemoryUtils.trashcanNow. Engine heap size: 6,245 MB. GUI used memory: 68 MB. Current time: 8/30/23, 5:55:59 PM EDT
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 79, 247); // be
+selectCodeEditor("agex_stage.v", 358, 246); // be
+selectCodeEditor("agex_stage.v", 466, 251); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 101, 127); // be
+typeControlKey((HResource) null, "define.vh", 'c'); // be
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 75, 263); // be
+selectCodeEditor("agex_stage.v", 351, 265); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 25 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 113, 146); // be
+selectCodeEditor("define.vh", 74, 145); // be
+// Elapsed time: 16 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 192, 171); // be
+selectCodeEditor("agex_stage.v", 89, 177); // be
+selectCodeEditor("agex_stage.v", 171, 172); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+// Elapsed time: 53 seconds
+selectCodeEditor("agex_stage.v", 894, 121); // be
+selectCodeEditor("agex_stage.v", 85, 177); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 366, 215); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 365, 233); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 365, 249); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 360, 268); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 38 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 456, 260); // be
+selectCodeEditor("agex_stage.v", 50, 261); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 455, 264); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 60, 273); // be
+selectCodeEditor("agex_stage.v", 358, 280); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "define.vh", 1); // m
+selectCodeEditor("define.vh", 95, 109); // be
+// Elapsed time: 546 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "agex_stage.v", 2); // m
+selectCodeEditor("agex_stage.v", 473, 279); // be
+selectCodeEditor("agex_stage.v", 473, 279); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 479, 281); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 93, 295); // be
+selectCodeEditor("agex_stage.v", 117, 295); // be
+selectCodeEditor("agex_stage.v", 431, 297); // be
+selectCodeEditor("agex_stage.v", 131, 297); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 140, 293); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 79, 307); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 56 seconds
+selectCodeEditor("agex_stage.v", 111, 275); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 145, 293); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// Elapsed time: 12 seconds
+selectCodeEditor("agex_stage.v", 357, 292); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+typeControlKey(null, null, 'z');
+selectCodeEditor("agex_stage.v", 471, 293); // be
+selectCodeEditor("agex_stage.v", 364, 290); // be
+selectCodeEditor("agex_stage.v", 471, 295); // be
+// Elapsed time: 158 seconds
+selectCodeEditor("agex_stage.v", 786, 170); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+typeControlKey(null, null, 'z');
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,270 MB. GUI used memory: 68 MB. Current time: 8/30/23, 6:13:29 PM EDT
+// Elapsed time: 142 seconds
+selectCodeEditor("agex_stage.v", 462, 207); // be
+selectCodeEditor("agex_stage.v", 181, 221); // be
+// Elapsed time: 21 seconds
+selectCodeEditor("agex_stage.v", 260, 187); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 161, 231); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 365, 189); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 198, 251); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 164, 189); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 166, 265); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+// Elapsed time: 16 seconds
+selectCodeEditor("agex_stage.v", 115, 189); // be
+typeControlKey((HResource) null, "agex_stage.v", 'c'); // be
+selectCodeEditor("agex_stage.v", 129, 291); // be
+typeControlKey((HResource) null, "agex_stage.v", 'v'); // be
+selectCodeEditor("agex_stage.v", 369, 291); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 68 MB. Current time: 8/30/23, 6:43:29 PM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 67 MB. Current time: 8/30/23, 7:13:29 PM EDT
+// WARNING: HTimer (ActiveMsgMonitor Process Messages Timer) is taking 211ms to process. Increasing delay to 2000 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 67 MB. Current time: 8/30/23, 7:43:29 PM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 67 MB. Current time: 8/30/23, 8:13:29 PM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 67 MB. Current time: 8/30/23, 8:43:29 PM EDT
+// HMemoryUtils.trashcanNow. Engine heap size: 6,247 MB. GUI used memory: 67 MB. Current time: 8/30/23, 9:13:30 PM EDT
