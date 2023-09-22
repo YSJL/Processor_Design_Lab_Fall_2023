@@ -266,7 +266,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/lw.mem
@@ -293,7 +293,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/ori.mem
@@ -563,7 +563,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/sra.mem
@@ -590,7 +590,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/srli.mem
@@ -698,7 +698,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/test10.mem
@@ -752,7 +752,7 @@ make[1]: Leaving directory `/home/hice1/slee802/lab1/cs3220-labs/lab1/obj_dir'
 -- RUN ---------------------
 obj_dir/Vpipeline
 Total instructions=0, cycles=0, IPC=-nan
-Failed. exitcode: 0
+Passed!
 -- DONE --------------------
 
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/xori.mem

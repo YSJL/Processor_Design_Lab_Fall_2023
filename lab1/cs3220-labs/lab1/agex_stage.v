@@ -27,13 +27,16 @@ module AGEX_STAGE(
   wire [`DBITS-1:0] pcplus_AGEX; 
   wire [`IOPBITS-1:0] op_I_AGEX;
   reg [`DBITS-1:0] aluout_AGEX; //User Change
+  reg [`DBITS-1:0] memaddr_AGEX;
   
   reg br_cond_AGEX; // 1 means a branch condition is satisified. 0 means a branch condition is not satisifed
  
   /////////////////////////////////////////////////////////////////////////////
 
   wire is_br_AGEX;
-  wire is_sw_AGEX;
+  wire is_jmp_AGEX;
+  wire rd_mem_AGEX;
+  wire wr_mem_AGEX;
   wire wr_reg_AGEX;
   wire [`REGNOBITS-1:0] wregno_AGEX;
 
@@ -56,10 +59,7 @@ module AGEX_STAGE(
           br_cond_AGEX = 1'b0;
         end
       `BNE_I :
-        if (regval1_AGEX == 32'h1000288 && regval2_AGEX == 32'h288) begin
-          br_cond_AGEX = 1'b0;
-        end
-        else if (regval1_AGEX != regval2_AGEX) begin
+        if (regval1_AGEX != regval2_AGEX) begin
           br_cond_AGEX = 1'b1; 
         end else begin
           br_cond_AGEX = 1'b0;
@@ -88,9 +88,6 @@ module AGEX_STAGE(
         end else begin
           br_cond_AGEX = 1'b0;
         end
-      `JAL_I : br_cond_AGEX = 1'b1; 
-      `JR_I : br_cond_AGEX = 1'b1; 
-      `JALR_I : br_cond_AGEX = 1'b1; 
       default : br_cond_AGEX = 1'b0;
     endcase
   end
@@ -104,41 +101,34 @@ module AGEX_STAGE(
        `AND_I : aluout_AGEX = regval1_AGEX & regval2_AGEX;
        `OR_I :  aluout_AGEX = regval1_AGEX | regval2_AGEX;
        `XOR_I : aluout_AGEX = regval1_AGEX ^ regval2_AGEX;
-       `SLT_I :
-         begin
-           aluout_AGEX[0:0] = $signed(regval1_AGEX) < $signed(regval2_AGEX);
-         end
-       `SLTU_I : 
-         begin
-           aluout_AGEX[0:0] = regval1_AGEX < regval2_AGEX;
-         end
-       `SRA_I : aluout_AGEX = regval1_AGEX >>> regval2_AGEX[4:0];
+       `SLT_I : aluout_AGEX = ($signed(regval1_AGEX) < $signed(regval2_AGEX)) ? 1: 0;
+       `SLTU_I :aluout_AGEX = (regval1_AGEX < regval2_AGEX) ? 1 : 0;
+       `SRA_I : aluout_AGEX = $signed(regval1_AGEX) >>> $signed(regval2_AGEX[4:0]);
        `SRL_I : aluout_AGEX = regval1_AGEX >> regval2_AGEX[4:0];
        `SLL_I : aluout_AGEX = regval1_AGEX << regval2_AGEX[4:0];
        `MUL_I : aluout_AGEX = $signed(regval1_AGEX) * $signed(regval2_AGEX);
-       `ADDI_I : aluout_AGEX = $signed(regval1_AGEX) + $signed(sxt_imm_AGEX);
+       `ADDI_I : aluout_AGEX = regval1_AGEX + sxt_imm_AGEX;
        `ANDI_I : aluout_AGEX = regval1_AGEX & sxt_imm_AGEX;
        `ORI_I  : aluout_AGEX = regval1_AGEX | sxt_imm_AGEX;
        `XORI_I : aluout_AGEX = regval1_AGEX ^ sxt_imm_AGEX;
-       `SLTI_I :
-         begin
-           aluout_AGEX[0:0] = $signed(regval1_AGEX) < $signed(sxt_imm_AGEX);
-         end
-       `SLTIU_I :
-         begin
-           aluout_AGEX[0:0] = regval1_AGEX < sxt_imm_AGEX;
-         end
-       `SRAI_I  : aluout_AGEX = regval1_AGEX >>> sxt_imm_AGEX;
-       `SRLI_I  : aluout_AGEX = regval1_AGEX >> sxt_imm_AGEX;
-       `SLLI_I  : aluout_AGEX = regval1_AGEX << sxt_imm_AGEX;
+       `SLTI_I : aluout_AGEX = ($signed(regval1_AGEX) < $signed(sxt_imm_AGEX)) ? 1 : 0;
+       `SLTIU_I : aluout_AGEX = (regval1_AGEX < sxt_imm_AGEX) ? 1 : 0;
+       `SRAI_I  : aluout_AGEX = $signed(regval1_AGEX) >>> $signed(sxt_imm_AGEX[4:0]);
+       `SRLI_I  : aluout_AGEX = regval1_AGEX >> sxt_imm_AGEX[4:0];
+       `SLLI_I  : aluout_AGEX = regval1_AGEX << sxt_imm_AGEX[4:0];
        `LUI_I   : aluout_AGEX = sxt_imm_AGEX;
        `AUIPC_I : aluout_AGEX = PC_AGEX + sxt_imm_AGEX;
        `JAL_I   : aluout_AGEX = pcplus_AGEX; 
        `JALR_I  : aluout_AGEX = pcplus_AGEX;
-       `LW_I    : aluout_AGEX = regval1_AGEX + sxt_imm_AGEX; 
-       `SW_I    : aluout_AGEX = regval1_AGEX + sxt_imm_AGEX;
+       `LW_I    : memaddr_AGEX = regval1_AGEX + sxt_imm_AGEX; 
+       `SW_I    :
+         begin
+           aluout_AGEX = regval2_AGEX;
+           memaddr_AGEX = regval1_AGEX + sxt_imm_AGEX;
+        end
        default: begin
          aluout_AGEX  = '0;
+         memaddr_AGEX = '0;
        end
      endcase
   end 
@@ -147,7 +137,11 @@ module AGEX_STAGE(
   // computed branch target needs to send to other pipeline stages (br_target_AGEX)
   // TODO: complete the code
   always @(*)begin
-    if (is_br_AGEX && br_cond_AGEX && (op_I_AGEX == `JR_I || op_I_AGEX == `JALR_I)) begin
+    if (op_I_AGEX == `JAL_I )
+      assign br_target_AGEX = PC_AGEX + sxt_imm_AGEX;
+    else if (op_I_AGEX == `JR_I )
+      assign br_target_AGEX = regval1_AGEX;
+    else if (op_I_AGEX == `JALR_I) begin
       assign br_target_AGEX = (regval1_AGEX + sxt_imm_AGEX) & 32'hfffffffe;
       end
     else if (is_br_AGEX && br_cond_AGEX) begin
@@ -158,7 +152,7 @@ module AGEX_STAGE(
     end
   end
 
-  assign br_mispred_AGEX = (is_br_AGEX
+  assign br_mispred_AGEX = ((is_br_AGEX || is_jmp_AGEX)
                          && (br_target_AGEX != pcplus_AGEX)) ? 1 : 0;
 
     assign  {                     
@@ -169,13 +163,15 @@ module AGEX_STAGE(
                                   op_I_AGEX,
                                   inst_count_AGEX,
                                           //  TODO: more signals might needed
-                                  regval1_AGEX,  //DBITS = 32 135 ~ 166
-                                  regval2_AGEX,  //DBITS = 32 167 ~ 198
-                                  sxt_imm_AGEX,  //DBITS = 32 199 ~ 230
-                                  is_br_AGEX,    //1          231
-                                  is_sw_AGEX,
-                                  wr_reg_AGEX,   //1          232
-                                  wregno_AGEX       //REGNOBITS = 5 233 ~ 237
+                                  regval1_AGEX,
+                                  regval2_AGEX,
+                                  sxt_imm_AGEX,                                
+                                  is_br_AGEX,
+                                  is_jmp_AGEX,
+                                  rd_mem_AGEX,
+                                  wr_mem_AGEX,
+                                  wr_reg_AGEX,
+                                  wregno_AGEX
                                   } = from_DE_latch; 
     
  
@@ -187,8 +183,9 @@ module AGEX_STAGE(
                                 inst_count_AGEX,
                                        // TODO: more signals might needed
                                 aluout_AGEX,
-                                regval2_AGEX,
-                                is_sw_AGEX,
+                                memaddr_AGEX,
+                                rd_mem_AGEX,
+                                wr_mem_AGEX,
                                 wr_reg_AGEX,   //1          232
                                 wregno_AGEX       //REGNOBITS = 5 233 ~ 237
                                 }; 

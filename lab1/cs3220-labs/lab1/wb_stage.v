@@ -48,7 +48,7 @@ module WB_STAGE(
         
         // write register by sending data to the DE stage 
 
-assign regval_WB = (`LW_I == 1) ? rd_val_WB : aluout_WB;
+assign regval_WB = (op_I_WB == `LW_I) ? rd_val_WB : aluout_WB;
 
 // forward signals to FE stage
 assign from_WB_to_FE = '0;

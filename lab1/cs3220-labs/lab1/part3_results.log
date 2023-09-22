@@ -17,9 +17,9 @@ Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/jalr.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/lui.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/lw.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/ori.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/or.mem
@@ -39,9 +39,9 @@ Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/sltu.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/srai.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/sra.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/srli.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/srl.mem
@@ -49,11 +49,11 @@ Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/sub.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/sw.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/test10.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/testall.mem
-Failed. exitcode: 0
+Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/xori.mem
 Passed!
 TESTING: /home/hice1/slee802/lab1/cs3220-labs/lab1/test/part3/xor.mem

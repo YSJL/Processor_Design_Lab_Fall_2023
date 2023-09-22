@@ -196,10 +196,10 @@ end
 always @(*) begin 
   case (type_immediate_DE )  
    `I_immediate: sxt_imm_DE = {{21{inst_DE[31]}}, inst_DE[30:25], inst_DE[24:21], inst_DE[20]};
-   `B_immediate: sxt_imm_DE = {{20{inst_DE[31]}}, inst_DE[7], inst_DE[30:25], inst_DE[11:8], 1'b0};
    `S_immediate: sxt_imm_DE = {{21{inst_DE[31]}}, inst_DE[30:25], inst_DE[11:8], inst_DE[7]};
+   `B_immediate: sxt_imm_DE = {{20{inst_DE[31]}}, inst_DE[7], inst_DE[30:25], inst_DE[11:8], 1'b0};
    `U_immediate: sxt_imm_DE = {inst_DE[31], inst_DE[30:20], inst_DE[19:12], 12'b0};
-   `J_immediate: sxt_imm_DE = {inst_DE[31:20], inst_DE[19:12], inst_DE[20] ,inst_DE[30:25] ,inst_DE[24:21] ,1'b0};
+   `J_immediate: sxt_imm_DE = {{12{inst_DE[31]}}, inst_DE[19:12], inst_DE[20] ,inst_DE[30:25] ,inst_DE[24:21] ,1'b0};
     
    default:
     sxt_imm_DE = 32'b0; 
@@ -215,7 +215,9 @@ end
   wire [`DBITS-1:0] rs2_val_DE;
 
   wire is_br_DE;    // is conditional branch instr
-  wire is_sw_DE;
+  wire is_jmp_DE;
+  wire rd_mem_DE;
+  wire wr_mem_DE;
   wire wr_reg_DE;   // is writing back to register file
 
   // Decode instruction registers
@@ -233,12 +235,14 @@ end
                       (op_I_DE == `BLT_I) ||
                       (op_I_DE == `BGE_I) ||
                       (op_I_DE == `BLTU_I) ||
-                      (op_I_DE == `BGEU_I) ||
-                      (op_I_DE == `JAL_I) ||
+                      (op_I_DE == `BGEU_I)) ? 1 : 0;
+  
+  assign is_jmp_DE  = ((op_I_DE == `JAL_I) || 
                       (op_I_DE == `JR_I) ||
                       (op_I_DE == `JALR_I)) ? 1 : 0;
-                      
-  assign is_sw_DE =   (op_I_DE == `SW_I) ? 1 : 0;                  
+  
+  assign rd_mem_DE =   (op_I_DE == `LW_I) ? 1 : 0;                    
+  assign wr_mem_DE =   (op_I_DE == `SW_I) ? 1 : 0;                  
                       
   assign wr_reg_DE = ((op_I_DE == `ADD_I) || 
                       (op_I_DE == `CSRR_I) ||
@@ -362,8 +366,10 @@ end
                                   rs1_val_DE,  //DBITS = 32 135 ~ 166
                                   rs2_val_DE,  //DBITS = 32 167 ~ 198
                                   sxt_imm_DE,  //DBITS = 32 199 ~ 230
-                                  is_br_DE,    //1          231
-                                  is_sw_DE,
+                                  is_br_DE,
+                                  is_jmp_DE,
+                                  rd_mem_DE,
+                                  wr_mem_DE,
                                   wr_reg_DE,   //1          232
                                   rd_DE        //REGNOBITS = 5 233 ~ 237
                                   }; 

@@ -47,15 +47,15 @@ module MEM_STAGE(
   wire [`DBITS-1:0] rd_val_MEM;  // memory read value 
   wire [`DBITS-1:0] wr_val_MEM;  // memory write value 
   wire wr_mem_MEM;  // is this instruction writing a value into memory? 
+  wire rd_mem_MEM;
   wire is_lw_MEM;
   
-  assign memaddr_MEM = aluout_MEM;
   
   assign is_lw_MEM = (op_I_MEM == `LW_I) ? 1 : 0; 
   // Read from D-MEM  (read code is completed if there is a correct memaddr_MEM ) 
   assign rd_val_MEM = dmem[memaddr_MEM[`DMEMADDRBITS-1:`DMEMWORDBITS]];
 
-  
+  assign wr_val_MEM = aluout_MEM;
  // Write to D-MEM
   always @ (posedge clk) begin
     if(wr_mem_MEM)
@@ -75,7 +75,8 @@ module MEM_STAGE(
                                 inst_count_MEM,
                                  // more signals might need
                                 aluout_MEM,
-                                wr_val_MEM,
+                                memaddr_MEM, 
+                                rd_mem_MEM,
                                 wr_mem_MEM,
                                 wr_reg_MEM,
                                 wregno_MEM
